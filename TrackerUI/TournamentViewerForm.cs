@@ -17,6 +17,7 @@ namespace TrackerUI
             InitializeComponent();
             tournamentTabControl.ItemSize = new Size(0, 1);
             removePlayerButton.Text = char.ConvertFromUtf32(8592);
+            addPlayerButton.Text = char.ConvertFromUtf32(8594);
         }
 
         private void scoreButton_Click(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace TrackerUI
 
         private void viewButton_Click(object sender, EventArgs e)
         {
-            tournamentTabControl.SelectedTab = tabPage2;
+            tournamentTabControl.SelectedTab = tabPage4;
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -65,12 +66,33 @@ namespace TrackerUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tournamentTabControl.SelectedTab = tabPage3;
+            tournamentTabControl.SelectedTab = tabPage1;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tournamentTabControl.SelectedTab = tabPage1;
+            tournamentTabControl.SelectedTab = tabPage2;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tournamentTabControl.SelectedTab = tabPage0;
+        }
+
+        private void radioButtonNo_CheckedChanged(object sender, EventArgs e)
+        {
+            loadExistingTournamentLabel.Enabled = true;
+            loadExistingTournamentCombo.Enabled = true;
+            loadTournamentButton.Enabled = true;
+            createTournamentNavButton.Enabled = false;
+        }
+
+        private void radioButtonYes_CheckedChanged(object sender, EventArgs e)
+        {
+            loadExistingTournamentLabel.Enabled = false;
+            loadExistingTournamentCombo.Enabled = false;
+            loadTournamentButton.Enabled = false;
+            createTournamentNavButton.Enabled = true;
         }
     }
 }
